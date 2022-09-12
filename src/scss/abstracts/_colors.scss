@@ -1,0 +1,18 @@
+//==================//
+//===// Colors //===//
+//==================//
+
+body {
+  --dark-clr: hsl(203 65% 12%);
+  --light-clr: hsl(0 0% 96%);
+
+  --accent-clr: hsl(248 100% 60%);
+  --dark-accent-clr: hsl(250 18% 19%);
+}
+
+$color: (
+  'dark-clr': var(--dark-clr),
+  'light-clr': var(--light-clr),
+  'accent-clr': var(--accent-clr),
+  'dark-accent-clr': var(--dark-accent-clr),
+);

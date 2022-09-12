@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
 
-import { useTransition as useSpringTransition, animated } from 'react-spring';
+import { allNewDice, generateNewDie } from './functions/generateDice';
 
 import Die from './components/Die';
-import Confetti from './components/Confetti';
-
-import { allNewDice, generateNewDie } from './functions/generateDice';
 import Highscore from './components/Highscore';
 import Score from './components/Score';
+import Confetti from './components/Confetti';
 
 const formatTime = (time) => (
   <>
@@ -53,6 +51,7 @@ const App = () => {
     } else if (!isPlaying) {
       clearInterval(gameDuration);
     }
+
     return () => clearInterval(gameDuration);
   }, [isPlaying]);
 
@@ -113,21 +112,8 @@ const App = () => {
     <Die key={die.id} value={die.value} isHeld={die.isHeld} holdDice={() => holdDice(die.id)} isPlaying={isPlaying} />
   ));
 
-  // Reset button transition
-  const [isVisible, setIsVisible] = useState(isPlaying);
-
-  useEffect(() => {
-    setIsVisible(isPlaying);
-  }, [isPlaying]);
-
-  const transition = useSpringTransition(isVisible, {
-    from: { y: -50, opacity: 0 },
-    enter: { y: 0, opacity: 1 },
-    leave: { y: -50, opacity: 0 },
-  });
-
   return (
-    <>
+    <div className='container'>
       <main className='game'>
         <h1 className='game__title'>Tenzies</h1>
         <p className='game__description'>
@@ -136,19 +122,17 @@ const App = () => {
 
         <section className='gameboard'>{diceElements}</section>
 
-        <section className='game__btns' style={isVisible ? { marginBottom: '5.9rem' } : { marginBottom: '0rem' }}>
-          <button className='game__btn' onClick={showStart ? startGame : victory ? resetGame : rollDice}>
+        <section className={`game__btns ${isPlaying ? 'game__btns--expanded' : ''}`}>
+          <button className='game__btn btn' onClick={showStart ? startGame : victory ? resetGame : rollDice}>
             {showStart ? 'Start' : victory ? 'New Game' : 'Roll'}
           </button>
 
-          {transition(
-            (style, item) =>
-              item && (
-                <animated.button style={style} className='game__btn game__btn--reset' onClick={resetGame}>
-                  Reset
-                </animated.button>
-              )
-          )}
+          <button
+            className={`game__btn game__btn-reset  ${isPlaying ? 'game__btn-reset--visible' : ''} btn`}
+            onClick={resetGame}
+          >
+            Reset
+          </button>
         </section>
 
         <section className='game__stats-container'>
@@ -157,8 +141,21 @@ const App = () => {
         </section>
       </main>
 
+      <footer className='footer'>
+        <a href='https://github.com/Malelus' target='_blank' className='btn btn--icon'>
+          Author <i className='fa-brands fa-github' />
+        </a>
+        <a href='https://github.com/Malelus/Tenzies' target='_blank' className='btn btn--icon'>
+          Project <i className='fa-brands fa-github' />
+        </a>
+
+        <div className='btn btn--icon footer__hover'>
+          <i className='fa-brands fa-github' />
+        </div>
+      </footer>
+
       {victory && <Confetti />}
-    </>
+    </div>
   );
 };
 

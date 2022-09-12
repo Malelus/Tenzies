@@ -1,0 +1,36 @@
+//======================//
+//===// Typography //===//
+//======================//
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 0.06em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  display: inline-block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+code {
+  line-height: 1.25em;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  user-select: none;
+}

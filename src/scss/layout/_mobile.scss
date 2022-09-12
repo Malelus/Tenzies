@@ -1,0 +1,41 @@
+//===============================================================//
+//===// Incorporating required mobile layout scss variables //===//
+//===============================================================//
+
+@use '../abstracts' as *;
+
+//======================================//
+//===// Responsive layout - mobile //===//
+//======================================//
+
+@include mobile {
+  //===// Main //===//
+
+  //===// Game
+
+  .game {
+    &__title {
+      font-size: 1.625rem;
+    }
+
+    &__description {
+      font-size: 0.9rem;
+    }
+
+    &__stats {
+      & + & {
+        margin-top: 0;
+      }
+
+      &__clear-btn {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  //===// Gameboard
+
+  .gameboard__die {
+    --size: 3rem;
+  }
+}
