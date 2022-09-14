@@ -16,4 +16,10 @@
   }
 }
 
-//===//  //===//
+//===// Custom //===//
+
+@mixin custom($size) {
+  @media screen and (min-width: $size) {
+    @content;
+  }
+}

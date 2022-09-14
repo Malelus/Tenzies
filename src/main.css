@@ -106,7 +106,7 @@ body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 .btn:hover, .btn:focus {
   box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.2), 0px 3px 8px rgba(0, 0, 0, 0.18);
@@ -152,16 +152,20 @@ body {
   display: grid;
   place-items: center;
   height: 100vh;
-  margin-inline: 1.5rem;
 }
 
 .game {
-  max-width: 500px;
+  max-width: 400px;
   background-color: var(--light-clr);
   border-radius: 0.625rem;
   color: var(--dark-accent-clr);
   text-align: center;
   padding: 2rem 1.5rem;
+}
+@media screen and (min-width: 23em) {
+  .game {
+    margin-inline: 1.5rem;
+  }
 }
 .game__title {
   font-size: 1.4rem;
@@ -308,17 +312,17 @@ body {
   translate: -78%;
   transition: translate var(--transition-duration) ease-in-out;
 }
-.footer:hover, .footer:focus {
+.footer--visible {
   translate: 0;
 }
-.footer__hover {
+.footer__toggle {
   background-color: var(--dark-accent-clr);
-}
-.footer__hover:hover, .footer__hover:focus, .footer__hover:active {
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.18);
 }
 
 @media screen and (min-width: 48em) {
+  .game {
+    max-width: 500px;
+  }
   .game__title {
     font-size: 1.625rem;
   }

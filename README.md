@@ -16,10 +16,12 @@
 
 - the website has been designed in a responsive way so that it can be used freely and comfortably on any device:
 
-| Smartphone                                                                                          | Mobile                                                                                           |
-| --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| < 768px                                                                                             | >= 768px                                                                                         |
-| View adapted for use on a smartphone, hamburger menu (expandable navigation) (initial site design), | Mobile view, fixed navigation bar on top, fonts resize and fit of animations for larger screens, |
+| Smartphone                                                  | Mobile                                                                                           |
+| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| < 768px                                                     | >= 768px                                                                                         |
+| View adapted for use on a smartphone (initial site design), | Mobile view, fixed navigation bar on top, fonts resize and fit of animations for larger screens, |
+
+- open graph tags (page preview in pasted link) in the head of the page,
 
 - game starts when START button is pressed,
 
@@ -37,7 +39,7 @@
 
 - button under the highscore is used to remove the highscore from local storage,
 
-- github links are located under the task list.
+- github links are located in bottom left corner under button.
 
 #### Look:
 

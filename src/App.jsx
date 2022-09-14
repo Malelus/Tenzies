@@ -6,6 +6,7 @@ import Die from './components/Die';
 import Highscore from './components/Highscore';
 import Score from './components/Score';
 import Confetti from './components/Confetti';
+import Footer from './components/Footer';
 
 const formatTime = (time) => (
   <>
@@ -141,18 +142,7 @@ const App = () => {
         </section>
       </main>
 
-      <footer className='footer'>
-        <a href='https://github.com/Malelus' target='_blank' className='btn btn--icon'>
-          Author <i className='fa-brands fa-github' />
-        </a>
-        <a href='https://github.com/Malelus/Tenzies' target='_blank' className='btn btn--icon'>
-          Project <i className='fa-brands fa-github' />
-        </a>
-
-        <div className='btn btn--icon footer__hover'>
-          <i className='fa-brands fa-github' />
-        </div>
-      </footer>
+      <Footer />
 
       {victory && <Confetti />}
     </div>
