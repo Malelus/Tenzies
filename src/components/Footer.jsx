@@ -4,11 +4,16 @@ const Footer = () => {
   const [showFooter, setShowFooter] = useState(false);
 
   return (
-    <footer className={`footer ${showFooter ? 'footer--visible' : ''}`} onBlur={() => setShowFooter(false)}>
-      <a href='https://github.mndev.eu' target='_blank' className='btn btn--icon'>
+    <footer className={`footer ${showFooter ? 'footer--visible' : ''}`}>
+      <a href='https://github.mndev.eu' target='_blank' className='btn btn--icon' onClick={() => setShowFooter(false)}>
         Author <i className='fa-brands fa-github' />
       </a>
-      <a href='https://github.mndev.eu/Tenzies' target='_blank' className='btn btn--icon'>
+      <a
+        href='https://github.mndev.eu/Tenzies'
+        target='_blank'
+        className='btn btn--icon'
+        onClick={() => setShowFooter(false)}
+      >
         Project <i className='fa-brands fa-github' />
       </a>
 
