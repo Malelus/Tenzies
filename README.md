@@ -1,6 +1,6 @@
 # Tenzies - Select all dice with same number of dots!
 
-> ### [Page link](https://malelus-tenzies.netlify.app/)
+> ### [Page link](https://tenzies.mndev.eu)
 
 ---
 
